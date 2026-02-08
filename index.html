@@ -100,22 +100,49 @@ section {
 }
 /* ===== PROJECT SECTIONNN ===== */
 .project-card {
-  background: rgba(10, 15, 35, 0.9);  /* matches your dark theme */
+  background: rgba(10, 15, 35, 0.9);
   border-radius: 12px;
   border: 1px solid #00f7ff22;
-  padding: 20px;
-  text-align: center;
-  max-width: 600px;  /* keeps project card from being too wide */
-  margin: 20px auto; /* centers it on the page */
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 1000px;
 }
 
-.project-card img {
-  width: 100%;        /* fills the card width */
-  max-height: 300px;  /* keeps tall images from overflowing */
-  object-fit: cover;  /* crops without stretching */
-  border-radius: 8px;
-  margin-bottom: 15px;
+.project-card h2 {
+  color: #00f7ff;
 }
+
+.project-card img.project-image {
+  width: 100%;          /* fit container width */
+  max-width: 600px;     /* optional: cap max size */
+  height: auto;         /* maintain aspect ratio */
+  border-radius: 8px;
+  margin: 15px 0;
+  display: block;
+  object-fit: contain;  /* keeps image from stretching weirdly */
+}
+
+
+.project-card ul {
+  margin: 10px 0 15px 20px;
+  line-height: 1.6;
+}
+.project-card img.project-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px auto;   /* centers horizontally */
+  display: block;      /*  centering */
+  max-width: 500px;
+}
+
+.project-links a {
+  text-decoration: none;
+  color: #00f7ff;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
 
 .project-links a {
   display: inline-block;         
@@ -139,6 +166,25 @@ footer {
   margin: 40px 0;
   color: #777;
 }
+.iso-project {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+#contact a {
+  color: #ffffff;       /* white text */
+  text-decoration: none; /* removes underline */
+  font-weight: bold;
+}
+
+#contact a:hover {
+  color: #00f7ff;       /* glow color on hover */
+  text-shadow: 0 0 6px #00f7ff;
+}
+
+
 </style>
 </head>
 
@@ -150,12 +196,64 @@ footer {
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
     <a href="#resume">Resume</a>
   </div>
 </div>
 
+<section id = "experience">
+  <div class = "section-box">
+    <h2>Experience - SFS2 Program</h2>
+    <p>Research Assistant</p>
+  <h2>Software-Defined Radio Digital Communication System</h2>
+<div class="project-card">
+
+  <img src="Images/SDR_Pic.png" alt="SDR Project" class="project-image">
+
+  <p>
+    Built an end-to-end digital communication system using a USRP N210 Software-Defined Radio to explore real-world modulation and signal processing. The project evaluates system performance under different modulation schemes and demonstrates practical SDR pipeline design using GNU Radio.
+  </p>
+
+  <ul>
+    <li>Designed filtering, synchronization, and demodulation blocks</li>
+    <li>Analyzed signal distortion in time and frequency domains</li>
+    <li>Improved link reliability through debugging and tuning</li>
+    <li>Validated performance across multiple modulation schemes</li>
+  </ul>
+
+  <p class="tech-details">
+    The system uses GNU Radio to construct a full SDR pipeline including modulation, filtering, synchronization, and demodulation. Performance was evaluated using time-domain and spectral analysis, bridging theoretical communication concepts with practical RF experimentation.
+  </p>
+
+</div>
+<h2>Electrical Resistivity Tomography (ERT) System</h2>
+<div class="project-card">
+
+  <img src="Images/ERT_PIC.png" alt="ERT Project" class="project-image">
+
+  <p>
+    Developed and improved an Arduino-based Electrical Resistivity Tomography (ERT) system for geophysical sensing. The project automates multi-electrode measurements to eliminate manual switching and increase experimental accuracy.
+  </p>
+
+  <ul>
+    <li>Designed a custom multi-channel PCB in KiCad using 16×1 multiplexers</li>
+    <li>Automated electrode switching to enable continuous measurements</li>
+    <li>Built and tested laboratory-scale sensing hardware</li>
+    <li>Collected resistivity data under varying environmental conditions</li>
+    <li>Validated system performance and measurement repeatability</li>
+  </ul>
+
+  <p class="tech-details">
+    The system integrates Arduino-based control electronics with a custom switching board to perform automated resistivity measurements. This work combines PCB design, embedded programming, and experimental validation to create a scalable geophysical instrument platform.
+  </p>
+
+</div>
+
+    
+  </div>
+</section>
 <section id="about">
   <div class="section-box">
     <h2>About Me</h2>
@@ -167,25 +265,68 @@ footer {
     </p>
   </div>
 </section>
-
 <section id="projects">
-  <div class="section-box">
-
+  <div class="project-card">
     <h2>L.O.G. (Lethal Offensive Gear) Project</h2>
-    <div class="project-card">
-      <img src="Images/LOG_MESH_Model.png" alt="LOG Project photo">
-      <p>
-        Designed and built a modular robotic combat chassis inspired by battle bots.
-        Implemented Fusion 360 CAD modeling and physical prototyping with rapid iteration.
-      </p>
-      <div class="project-links">
-        <a href="https://github.com/Antwann03/LOG" target="_blank">GitHub Repository</a>
-      </div>
+    
+    <!-- Image of the chassis -->
+     <img src="Images/LOG_MESH_Model.png" alt="LOG" class="project-image">
+    
+    <!-- Project Overview -->
+    <p>
+      Developed a modular robotic combat chassis inspired by battle bots. The robot is remotely controlled via a web interface hosted on an ESP32 microcontroller.
+    </p>
+    
+    <!-- Key Highlights -->
+    <ul>
+      <li>Designed and built the modular chassis using Fusion 360 and physical prototyping.</li>
+      <li>Implemented an ESP32-based Wi-Fi web interface for real-time control.</li>
+      <li>Developed motor driver and power circuits to maintain stable performance under dynamic loads.</li>
+      <li>Integrated peripherals such as GPIO, PWM, and SPIFFS for robot control and UI hosting.</li>
+      <li>Iteratively improved drivetrain and chassis for structural stability and manufacturability.</li>
+    </ul>
+    
+    <!-- Technical Details -->
+    <p class="tech-details">
+      The ESP32 runs a lightweight HTTP server, serving a custom web interface. Motors are driven through H-bridge inputs controlled via GPIO, with PWM for precise speed control. Images and UI assets are served from the SPIFFS filesystem. The system demonstrates real-time wireless control using Wi-Fi SoftAP mode, enabling operation without a router.
+    </p>
+    
+    <!-- Link to GitHub / Paper -->
+    <div class="project-links">
+      <a href="https://github.com/Antwann03/LOG" target="_blank">GitHub Repository</a>
     </div>
+  </div>
+</section>
 
+<div class="project-card">
+
+   <h2>Intersatellite Optical Communication (ISOC) Project (Capstone/Team Project)</h2>
+   <img src="Images/PCB_5stack.png" alt="ECE Lab" class="project-image">
+  
+  <p>
+    <strong>Project Overview:</strong><br>
+    With the adoption of optical communications, the field of communications is rapidly evolving. Inspired by Starlink, this project designs a free-space optical communication system for Low Earth Orbit inter-satellite links. The system calculates the angle of arrival of a laser, acquires the signal by predicting the source’s position, and transmits/receives messages processed in an FPGA.
+  </p>
+
+  <p>
+    <strong>My Role / Contributions:</strong>
+  </p>
+  <ul>
+    <li>Designed and routed portions of a 5-board modular PCB stack in KiCad around an Arduino GIGA R1 WiFi, separating sensor, intermediary, and control boards for better scalability and debugging.</li>
+    <li>Built a custom multi-channel PCB with multiplexers for automated electrode switching, eliminating manual reconfiguration.</li>
+    <li>Performed DRC checks and validated PCB manufacturability, coordinating fabrication to ensure successful production.</li>
+    <li>Built and tested sensing hardware, collecting resistivity data and correlating measurements to subsurface material properties.</li>
+  </ul>
+
+  <div class="project-links">
+    <a href="https://github.com/Antwann03/LOG" target="_blank">Paper</a>
+  </div>
+</div>
+
+<div class="project-card">
     <h2>Assembly Language Lab Projects</h2>
     <div class="project-card">
-      <img src="Images/ece422L_lab8_32_bit_alu.png" alt="LOG Project photo">
+      <img src="Images/ece422L_lab8_32_bit_alu.png" alt="Assembly Lab" class="project-image">
       <p>
         This repository provides foundational MIPS assembly labs (MAR4_5) that teach the basics of processor design.
         It covers creating functional components such as the ALU, registers, and microprocessor structures. Later labs extend these concepts using Logisim for hands-on digital circuit simulations.”
@@ -195,16 +336,22 @@ footer {
         </div>
     </div>
 
+    <div class="project-card">
+
+     <h2>BEATBOX Project</h2>
+     <img src="Images/Screenshot 2024-12-15 154705.png" alt="BEATBOX Project" class="project-image">
+      <p>
+        Experience music at your fingertips! This project uses the TM4C123GXL LaunchPad to play 4 different songs, featuring a magnetic buzzer for sound, a 16x2 LCD 
+        for easy navigation, and a rotary encoder for intuitive control. 
+        Select, play, and enjoy with real-time visual feedback simple, smart, and interactive.
+      </p>
+      <div class="project-links">
+        <a href="https://github.com/Antwann03/BEATBOX-ECE-425-Final-Project/tree/main" target="_blank">GitHub Repository</a>
+      </div>
+    </div>
+
   </div>
 </section>
-
-
-
-
-
-
-
-
 
 <!-- PROGRAMMING -->
 <section id="skills">
