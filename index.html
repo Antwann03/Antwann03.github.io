@@ -15,6 +15,7 @@ body {
   background: radial-gradient(circle at top, #0a0f1f, #02030a);
   color: #e6f1ff;
   padding-top: 80px; /* prevents navbar overlap */
+
 }
 
 /* NAVIGATION BAR */
@@ -44,12 +45,10 @@ body {
   margin-left: 20px;
   font-weight: bold;
 }
-
 .navbar a:hover {
   color: #00f7ff;
   text-shadow: 0 0 8px #00f7ff;
 }
-
 /* SECTIONS */
 section {
   scroll-margin-top: 110px;
@@ -111,7 +110,6 @@ section {
 .project-card h2 {
   color: #00f7ff;
 }
-
 .project-card img.project-image {
   width: 100%;          /* fit container width */
   max-width: 600px;     /* optional: cap max size */
@@ -121,8 +119,6 @@ section {
   display: block;
   object-fit: contain;  /* keeps image from stretching weirdly */
 }
-
-
 .project-card ul {
   margin: 10px 0 15px 20px;
   line-height: 1.6;
@@ -135,15 +131,12 @@ section {
   display: block;      /*  centering */
   max-width: 500px;
 }
-
 .project-links a {
   text-decoration: none;
   color: #00f7ff;
   font-weight: bold;
   margin-right: 15px;
 }
-
-
 .project-links a {
   display: inline-block;         
   margin: 10px;                  
@@ -155,10 +148,26 @@ section {
   text-decoration: none;
   transition: 0.2s ease;
 }
-
 .project-links a:hover {
   box-shadow: 0 0 10px #00f7ff;  /* subtle glowing hover effect */
   transform: translateY(-2px);
+}
+
+.floating-icon {
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  font-size: 40px;
+  color: #00f7ff;
+  opacity: 0.3;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
 }
 
 footer {
@@ -183,14 +192,26 @@ footer {
   color: #00f7ff;       /* glow color on hover */
   text-shadow: 0 0 6px #00f7ff;
 }
+#resume a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#resume a:hover {
+  color: #00f7ff;
+  text-shadow: 0 0 6px #00f7ff;
+}
 
 
 </style>
 </head>
 
 <body>
+<!-- MINI LOGO bottom right corner of screen on any device -->
+<i class="fas fa-robot floating-icon"></i>
 
-<!-- NAVBAR -->
+<!-- Navigation bar that displays About, Skills, Experience, Projects, Contact and Resume -->
 <div class="navbar">
   <h1>Antonio Anzora Jr Portfolio</h1>
   <div>
@@ -202,6 +223,18 @@ footer {
     <a href="#resume">Resume</a>
   </div>
 </div>
+
+<section id="about">
+  <div class="section-box">
+    <h2>About Me</h2>
+    <p>
+      I'm a Computer Engineering Graduate student focused on robotics, embedded systems,
+      and RF technologies. I enjoy building hands-on hardware/software projects
+      that bridge theory with real-world systems. My interests include SDR,
+      PCB design, microcontrollers, and rapid prototyping.
+    </p>
+  </div>
+</section>
 
 <section id = "experience">
   <div class = "section-box">
@@ -251,20 +284,10 @@ footer {
 
 </div>
 
-    
   </div>
 </section>
-<section id="about">
-  <div class="section-box">
-    <h2>About Me</h2>
-    <p>
-      I'm a Computer Engineering Graduate student focused on robotics, embedded systems,
-      and RF technologies. I enjoy building hands-on hardware/software projects
-      that bridge theory with real-world systems. My interests include SDR,
-      PCB design, microcontrollers, and rapid prototyping.
-    </p>
-  </div>
-</section>
+
+
 <section id="projects">
   <div class="project-card">
     <h2>L.O.G. (Lethal Offensive Gear) Project</h2>
@@ -319,7 +342,7 @@ footer {
   </ul>
 
   <div class="project-links">
-    <a href="https://github.com/Antwann03/LOG" target="_blank">Paper</a>
+    <a href="https://drive.google.com/drive/folders/1grvvsSQRrzy3B6DkEbAvlbi8Q4WrDwS4?usp=sharing" target="_blank">Paper</a>
   </div>
 </div>
 
@@ -375,6 +398,11 @@ footer {
 </div>
 
 <div class="card">
+<img src="https://repository-images.githubusercontent.com/552080470/f6651a0a-91db-4953-91a9-594526c8c16f">
+<p>VHDL</p>
+</div>
+
+<div class="card">
 <i class="fab fa-html5 fa-2x"></i>
 <p>HTML</p>
 </div>
@@ -411,13 +439,25 @@ footer {
 
 <div class="card">
 <img src="https://www.knowafest.com/files/uploads/XILINX%20VIVADO-2019082716.jpg">
-<p>Xilinx  Vivado</p>
+<p>Xilinx Vivado</p>
 </div>
 
 <div class="card">
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Arduino_IDE_logo.svg">
 <p>Arduino IDE</p>
 </div>
+
+<div class="card">
+<img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_0c7c3fc7a19fbe7d808e6a7218b041c6/code-composer-studio.jpg">
+<p>Code Composer Studio</p>
+</div>
+
+<div class="card">
+<img src="https://image.lceda.cn/oshwhub/7f6e05baa60b4aaeaf257ce068341ffd.png">
+<p>Keil uVision5</p>
+</div>
+
+
 
 <div class="card">
 <img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_c38b317ef74dac7a24d9c1e75164d9b5/cadence-pspice.jpg">
@@ -482,6 +522,15 @@ Email:<a href="mailto:AntonioAnzoraJr@Outlook.com">
 </p>
 
 </div>
+</section>
+
+<section id="resume">
+  <div class="section-box">
+    <h2>Resume</h2>
+    <p>
+      <a href="Antonio Anzora Jr Resume.pdf" target="_blank">Antonio Anzora Jr Resume</a>
+    </p>
+  </div>
 </section>
 
 <footer>
